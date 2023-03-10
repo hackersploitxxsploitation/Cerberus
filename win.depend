@@ -1,0 +1,59 @@
+# depslib dependency file v1.0
+1677862511 source:c:\users\estan\onedrive\햞ea de trabalho\win\main.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<Windows.h>
+	"dirent.h"
+	"AE.h"
+	"crip.h"
+
+1674473694 c:\users\estan\onedrive\햞ea de trabalho\win\dirent.h
+	<windows.h>
+	<stdio.h>
+	<stdarg.h>
+	<wchar.h>
+	<string.h>
+	<stdlib.h>
+	<malloc.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<errno.h>
+	<ctype.h>
+
+1640160969 c:\users\estan\onedrive\햞ea de trabalho\win\aes.h
+	<stdint.h>
+	<stddef.h>
+
+1675102531 c:\users\estan\onedrive\햞ea de trabalho\win\ae.h
+	<stdint.h>
+	<stddef.h>
+
+1675104098 source:c:\users\estan\onedrive\햞ea de trabalho\win\ae.c
+	<string.h>
+	"AE.h"
+
+1677862511 source:c:\users\estan\onedrive\햞ea de trabalho\win\ecies.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	"ecies.h"
+
+1677862511 c:\users\estan\onedrive\햞ea de trabalho\win\ecies.h
+
+1677862511 c:\users\estan\onedrive\햞ea de trabalho\win\ecc.h
+
+1677862511 source:c:\users\estan\onedrive\햞ea de trabalho\win\ec.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	"ecc.h"
+
+1677862511 source:c:\users\estan\onedrive\햞ea de trabalho\win\crip.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	"crip.h"
+
+1677862686 c:\users\estan\onedrive\햞ea de trabalho\win\crip.h
+
