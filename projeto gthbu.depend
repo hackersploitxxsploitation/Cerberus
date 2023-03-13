@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1678640815 source:c:\users\estan\onedrive\Área de trabalho\t\t.cbp\projeto gthbu\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
